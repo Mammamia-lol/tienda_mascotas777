@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tienda de Mascotas</title>
+</head>
+<body>
+    <h1>Nuestras Mascotas</h1>
+
+    <table border="1" cellpadding="8">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Especie</th>
+                <th>Raza</th>
+                <th>Edad</th>
+                <th>Precio</th>
+                <th>Stock</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for mascota in mascotas %}
+            <tr>
+                <td>{{ mascota.nombre }}</td>
+                <td>{{ mascota.especie }}</td>
+                <td>{{ mascota.raza }}</td>
+                <td>{{ mascota.edad }} años</td>
+                <td>${{ mascota.precio }}</td>
+                <td>{{ mascota.stock }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="6">No hay mascotas registradas en la tienda aún.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
