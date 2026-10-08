@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Editar Mascota - Tienda 777</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        body { background-color: #f4f6f9; }
+        .navbar-pet { background-color: #ff9f1c; }
+        .navbar-brand { color: white !important; font-weight: bold; font-size: 1.5rem; }
+        .panel-blanco {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-top: 30px;
+        }
+        input, select {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-pet mb-4 shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'listar_mascotas' %}">🐾 Tienda de Mascotas 777</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-7">
+                <div class="panel-blanco">
+                    
+                    <h3 style="color: #2b2d42; font-weight: bold;" class="text-center mb-4">
+                        ✏️ Editar Datos de la Mascota
+                    </h3>
+
+                    <form method="POST">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        
+                        <div class="d-grid gap-2 mt-4">
+                            <button type="submit" class="btn btn-warning btn-lg shadow-sm text-dark fw-bold">
+                                💾 Actualizar Mascota
+                            </button>
+                            <a href="{% url 'listar_mascotas' %}" class="btn btn-secondary btn-lg shadow-sm">
+                                ⬅️ Cancelar y Volver
+                            </a>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
