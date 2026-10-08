@@ -1,3 +1,6 @@
 from django.shortcuts import render
+from .models import Mascota
 
-# Create your views here.
+def inicio(request):
+    mascotas = Mascota.objects.all()
+    return render(request, 'mascotasapp/inicio.html', {'mascotas': mascotas})
