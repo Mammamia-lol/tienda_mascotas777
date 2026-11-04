@@ -7,4 +7,7 @@ urlpatterns = [
     path('crear/', views.crear_mascota, name='crear_mascota'),
     path('editar/<int:id>/', views.editar_mascota, name='editar_mascota'),
     path('eliminar/<int:id>/', views.eliminar_mascota, name='eliminar_mascota'),
+    
+    # --- NUEVA RUTA PARA LA API ---
+    path('api/mascotas/', views.api_mascotas, name='api_mascotas'),
 ]
