@@ -24,7 +24,7 @@
     <nav class="navbar navbar-pet mb-4 shadow-sm">
         <div class="container d-flex justify-content-between">
             <a class="navbar-brand" href="#">🐾 Tienda de Mascotas 777</a>
-            <button onclick="localStorage.removeItem('token'); window.location.href='{% url 'inicio' %}';" class="btn btn-outline-light btn-sm fw-bold">Cerrar Sesión</button>
+            <button onclick="localStorage.removeItem('token'); window.location.href=`{% url 'inicio' %}`;" class="btn btn-outline-light btn-sm fw-bold">Cerrar Sesión</button>
         </div>
     </nav>
 
