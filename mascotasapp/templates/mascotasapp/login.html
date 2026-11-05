@@ -43,6 +43,7 @@
         </div>
 
         <form id="loginForm">
+            {% csrf_token %}
             <div class="mb-3">
                 <label class="form-label fw-bold" style="color: #2b2d42;">Usuario</label>
                 <input type="text" class="form-control" name="username" placeholder="Ej: mauro" required>
@@ -65,7 +66,7 @@
         
         const formData = new FormData(this);
         
-        fetch("/api/token/", {
+        fetch("{% url 'login_sesion' %}", {
             method: "POST",
             body: formData
         })
@@ -76,7 +77,6 @@
         .then(data => {
             if (data.token) {
                 localStorage.setItem("token", data.token); 
-                alert("¡Sesión iniciada con éxito!");
                 window.location.href = "{% url 'listar_mascotas' %}"; 
             }
         })
