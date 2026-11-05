@@ -6,7 +6,7 @@ class MascotaSerializer(serializers.ModelSerializer):
         model = Mascota
         fields = '__all__'
 
-    # Validación de regla de negocio obligatoria
+
     def validate_precio(self, value):
         if value < 0:
             raise serializers.ValidationError("El precio no puede ser negativo.")
